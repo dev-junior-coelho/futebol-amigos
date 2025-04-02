@@ -1,0 +1,183 @@
+.player-card {
+  display: flex;
+  flex-direction: column;
+  width: 240px; /* Aumentando a largura base */
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1c1c1c;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.player-image-container {
+  position: relative;
+  height: 65%;
+  overflow: hidden;
+}
+
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.player-card:hover .player-image {
+  transform: scale(1.05);
+}
+
+.player-status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.status-paid {
+  background-color: #4CAF50;
+}
+
+.status-unpaid {
+  background-color: #F44336;
+}
+
+.player-info {
+  padding: 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.player-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  margin-bottom: 5px;
+}
+
+.player-position {
+  font-size: 0.9rem;
+  color: #bdbdbd;
+  margin-bottom: auto;
+}
+
+.player-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.player-stats {
+  display: flex;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #9e9e9e;
+}
+
+.player-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.player-button:hover {
+  background-color: #f40612;
+}
+
+.player-button.waiting {
+  background-color: #FFC107;
+  color: #212121;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.player-button.waiting:hover {
+  background-color: #FFC107;
+  transform: none;
+}
+
+.player-button.team-a {
+  background-color: #3498db;
+  color: white;
+  cursor: default;
+  transform: none;
+}
+
+.player-button.team-a:hover {
+  background-color: #3498db;
+  transform: none;
+}
+
+.player-button.team-b {
+  background-color: #e74c3c;
+  color: white;
+  cursor: default;
+  transform: none;
+}
+
+.player-button.team-b:hover {
+  background-color: #e74c3c;
+  transform: none;
+}
+
+.player-button.team-c {
+  background-color: #2ecc71;
+  color: white;
+  cursor: default;
+  transform: none;
+}
+
+.player-button.team-c:hover {
+  background-color: #2ecc71;
+  transform: none;
+}
+
+@media (max-width: 1200px) {
+  .player-card {
+    width: calc(25% - 20px); /* 4 cards por linha com mais espaço */
+  }
+}
+
+@media (max-width: 900px) {
+  .player-card {
+    width: calc(33.33% - 20px); /* 3 cards por linha com mais espaço */
+    min-width: 250px; /* Garantir tamanho mínimo mais confortável */
+  }
+}
+
+@media (max-width: 600px) {
+  .player-card {
+    width: calc(50% - 15px); /* 2 cards por linha */
+    min-width: 200px; /* Tamanho mínimo adaptado */
+  }
+}
+
+@media (max-width: 480px) {
+  .player-card {
+    width: 100%; /* 1 card por linha */
+    max-width: 320px; /* Limitar a largura máxima */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

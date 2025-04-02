@@ -1,0 +1,30 @@
+.button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.button-secondary {
+  background-color: #1abc9c;
+}
+
+.button-secondary:hover {
+  background-color: #16a085;
+}
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}

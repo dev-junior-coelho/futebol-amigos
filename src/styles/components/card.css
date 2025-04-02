@@ -1,0 +1,62 @@
+.card {
+  background-color: #1c1c1c;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(20% - 10px); /* Ajusta para caber 5 cards por linha com espaçamento */
+  margin: 5px; /* Espaçamento entre os cards */
+  aspect-ratio: 3 / 4; /* Mantém a proporção do card */
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 0.8rem 1rem; /* Ajusta o espaçamento interno */
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1rem; /* Ajusta o tamanho da fonte para melhor legibilidade */
+  color: #f5f5f5;
+  margin-bottom: 0.4rem;
+}
+
+.card-description {
+  font-size: 0.75rem;
+  color: #cccccc; /* Melhora o contraste do texto */
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: calc(25% - 10px); /* Ajusta para 4 cards por linha */
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: calc(33.33% - 10px); /* Ajusta para 3 cards por linha */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: calc(50% - 10px); /* Ajusta para 2 cards por linha */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* Ajusta para 1 card por linha */
+  }
+}

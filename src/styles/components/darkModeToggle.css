@@ -1,0 +1,60 @@
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+  border: 2px solid #007BFF;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e0e0e0;
+  transition: 0.4s;
+  border-radius: 50px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "🌙";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #007BFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input:checked + .toggle-slider {
+  background: linear-gradient(135deg, #FFC107, #FF9800);
+  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.5);
+}
+
+input:checked + .toggle-slider:before {
+  content: "☀️";
+  transform: translateX(35px);
+  background-color: #fff3e0;
+  color: #FF9800;
+}

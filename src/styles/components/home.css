@@ -1,0 +1,103 @@
+.home-container {
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.home-title {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.home-subtitle {
+  font-size: 1.4rem;
+  color: #7f8c8d;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.players-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1400px; /* Aumentando largura máxima */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filter-button {
+  background-color: #3498db; /* Cor padrão */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  min-width: 220px; /* Garante largura mínima consistente */
+  white-space: nowrap; /* Impede quebra de linha no texto */
+  text-align: center; /* Centraliza o texto */
+}
+
+.filter-button:hover {
+  background-color: #2980b9;
+}
+
+.filter-button-blue {
+  background-color: #3498db; /* Azul */
+}
+
+.filter-button-blue:hover {
+  background-color: #2980b9; /* Azul escuro para hover */
+}
+
+.filter-button-green {
+  background-color: #2ecc71; /* Verde */
+}
+
+.filter-button-green:hover {
+  background-color: #27ae60; /* Verde escuro para hover */
+}
+
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 2.2rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .players-grid {
+    gap: 15px;
+    padding: 0 10px; /* Adicionar um pouco de padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .players-grid {
+    gap: 15px;
+    padding: 0 5px;
+  }
+  
+  .buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

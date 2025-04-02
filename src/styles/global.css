@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #e5e5e5;
+}
+
+button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #f40612;
+  transform: scale(1.05);
+}
+
+button:focus, a:focus {
+  outline: 2px solid #29b6f6;
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e50914;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 90%;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Dark Mode Classes */
+body.dark-mode {
+  background-color: #000000;
+  color: #e5e5e5;
+}
+
+body.dark-mode .navbar, 
+body.dark-mode .nav-list {
+  background-color: #0a0a0a;
+}
+
+body.dark-mode .card {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .nav-list a:hover {
+  color: #ff8a00;
+}
+
+body.dark-mode button:focus, 
+body.dark-mode a:focus {
+  outline-color: #ff8a00;
+}
