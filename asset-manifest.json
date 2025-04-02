@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/futebol-amigos/static/css/main.cd674027.css",
+    "main.js": "/futebol-amigos/static/js/main.e78b2e8b.js",
+    "static/media/player.png": "/futebol-amigos/static/media/player.a5c6e01ed5d257f3a70a.png",
+    "index.html": "/futebol-amigos/index.html",
+    "main.cd674027.css.map": "/futebol-amigos/static/css/main.cd674027.css.map",
+    "main.e78b2e8b.js.map": "/futebol-amigos/static/js/main.e78b2e8b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd674027.css",
+    "static/js/main.e78b2e8b.js"
+  ]
+}
