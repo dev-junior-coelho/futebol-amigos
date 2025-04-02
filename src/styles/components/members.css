@@ -1,0 +1,254 @@
+.members-container {
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.members-container h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.members-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.action-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button {
+  background-color: #27ae60;
+}
+
+.add-button:hover {
+  background-color: #2ecc71;
+  transform: translateY(-3px);
+}
+
+.members-list {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.members-table th,
+.members-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.members-table th {
+  background-color: #f5f7fa;
+  font-weight: 600;
+  color: #34495e;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.members-table tr:last-child td {
+  border-bottom: none;
+}
+
+.members-table tr:hover {
+  background-color: #f5f9fc;
+}
+
+.action-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #2980b9;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* Destaque para os membros inadimplentes */
+.members-table tr.unpaid {
+  background-color: #ffebee;
+}
+
+.members-table tr.unpaid:hover {
+  background-color: #ffcdd2;
+}
+
+/* Formulário de membros */
+.member-form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.member-form-container h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.member-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.cancel-button {
+  background-color: #95a5a6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #7f8c8d;
+}
+
+.submit-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .members-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-container {
+    width: 100%;
+  }
+  
+  .member-form-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .members-table {
+    font-size: 14px;
+  }
+  
+  .members-table th,
+  .members-table td {
+    padding: 8px 10px;
+  }
+  
+  .action-cell {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .edit-button,
+  .delete-button {
+    width: 100%;
+    text-align: center;
+  }
+}

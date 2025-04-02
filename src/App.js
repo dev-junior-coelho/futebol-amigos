@@ -8,8 +8,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ChegadosProvider } from './contexts/ChegadosContext';
 
 function App() {
+  // Configurar o basename para o GitHub Pages
+  const basename = process.env.NODE_ENV === 'production' ? '/futebol-amigos' : '';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="App">
         <ChegadosProvider>
           <Navbar />

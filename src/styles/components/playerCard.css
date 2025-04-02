@@ -16,6 +16,15 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
+.player-card.loading {
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color: #999;
+}
+
 .player-image-container {
   position: relative;
   height: 65%;
@@ -49,10 +58,12 @@
 
 .status-paid {
   background-color: #4CAF50;
+  font-weight: bold;
 }
 
 .status-unpaid {
   background-color: #F44336;
+  font-weight: bold;
 }
 
 .player-info {
@@ -65,7 +76,7 @@
 
 .player-name {
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 700; /* Mais negrito para melhor leitura */
   color: #f5f5f5;
   margin-bottom: 5px;
 }
@@ -94,15 +105,20 @@
   padding: 6px 12px;
   border-radius: 4px;
   border: none;
-  background-color: #e50914;
+  background-color: #27ae60; /* Verde */
   color: white;
   font-size: 0.8rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease; /* Transição mais suave */
+  min-width: 100px;
+  text-align: center;
+  font-weight: 500;
 }
 
 .player-button:hover {
-  background-color: #f40612;
+  background-color: #2ecc71;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .player-button.waiting {
@@ -117,7 +133,6 @@
   transform: none;
 }
 
-/* Estilo para jogadores não sorteados */
 .player-button:disabled {
   cursor: not-allowed;
 }
@@ -127,6 +142,7 @@
   color: white;
   cursor: default;
   transform: none;
+  min-width: 100px;
 }
 
 .player-button.team-a:hover {
@@ -139,6 +155,7 @@
   color: white;
   cursor: default;
   transform: none;
+  min-width: 100px;
 }
 
 .player-button.team-b:hover {
@@ -151,11 +168,40 @@
   color: white;
   cursor: default;
   transform: none;
+  min-width: 100px;
 }
 
 .player-button.team-c:hover {
   background-color: #2ecc71;
   transform: none;
+}
+
+.player-button.button-clicked {
+  transform: scale(0.92);
+  transition: transform 0.1s ease;
+}
+
+.player-button.aguardando {
+  background-color: #FFC107;
+  color: #212121;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Transição mais suave */
+}
+
+.player-button.aguardando:hover {
+  background-color: #FFA000;
+  transform: scale(0.98);
+}
+
+/* Adicionar animação de fade para remoção */
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.8); }
+}
+
+.player-card.removing {
+  animation: fadeOut 0.5s ease forwards;
+  pointer-events: none;
 }
 
 @media (max-width: 1200px) {

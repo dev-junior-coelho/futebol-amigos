@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/components/playerCard.css';
 import defaultPlayerImage from '../assets/player.png';
 
 const PlayerCard = ({ player, onAction, buttonText }) => {
+  const [localButtonText, setLocalButtonText] = useState(buttonText);
+  const [isRemoving, setIsRemoving] = useState(false);
+  const cardRef = useRef(null);
+  
+  useEffect(() => {
+    setLocalButtonText(buttonText);
+  }, [buttonText]);
+
+  if (!player) {
+    return <div className="player-card loading">Carregando...</div>;
+  }
+
   const { 
     id, 
     name, 
@@ -15,23 +27,56 @@ const PlayerCard = ({ player, onAction, buttonText }) => {
 
   const isPaid = statusPagamento === "Adimplente";
   
-  // Determina a classe do botão baseado no texto
   const getButtonClass = () => {
-    if (buttonText === "Aguardando Sorteio") return "waiting";
-    if (buttonText === "Time A") return "team-a";
-    if (buttonText === "Time B") return "team-b";
-    if (buttonText === "Time C") return "team-c";
-    return "";
+    const text = localButtonText || buttonText;
+    if (text === "Aguardando Sorteio") return "player-button aguardando";
+    if (text === "Time A") return "player-button team-a";
+    if (text === "Time B") return "player-button team-b";
+    if (text === "Time C") return "player-button team-c";
+    return "player-button";
   };
 
-  // Verifica se o botão deve estar desabilitado
-  const isButtonDisabled = buttonText === "Aguardando Sorteio" || 
-                          buttonText === "Time A" || 
-                          buttonText === "Time B" ||
-                          buttonText === "Time C";
+  const isButtonDisabled = (localButtonText || buttonText) === "Time A" || 
+                          (localButtonText || buttonText) === "Time B" ||
+                          (localButtonText || buttonText) === "Time C";
+
+  const handleButtonClick = () => {
+    if (onAction && !isButtonDisabled) {
+      // Feedback visual do botão
+      const button = document.activeElement;
+      button.classList.add('button-clicked');
+      
+      // Se o botão é "Aguardando Sorteio" e estamos na tela de sorteio, iniciar animação de remoção
+      if ((localButtonText || buttonText) === "Aguardando Sorteio" && window.location.pathname.includes("teams")) {
+        setIsRemoving(true);
+        
+        // Aguardar a animação terminar antes de remover
+        setTimeout(() => {
+          setLocalButtonText("Chegou");
+          // Remover a classe depois da animação
+          setTimeout(() => {
+            onAction(player);
+          }, 50);
+        }, 450); // Um pouco menos que a duração da animação
+      } else {
+        // Comportamento normal
+        const newText = (localButtonText || buttonText) === "Aguardando Sorteio" ? "Chegou" : "Aguardando Sorteio";
+        setLocalButtonText(newText);
+        
+        // Remover a classe depois de um tempo
+        setTimeout(() => {
+          button.classList.remove('button-clicked');
+          onAction(player);
+        }, 150);
+      }
+    }
+  };
 
   return (
-    <div className="player-card">
+    <div 
+      ref={cardRef}
+      className={`player-card ${isRemoving ? 'removing' : ''}`}
+    >
       <div className="player-image-container">
         <img src={image} alt={name} className="player-image" />
         <div className={`player-status-badge ${isPaid ? 'status-paid' : 'status-unpaid'}`}>
@@ -51,11 +96,12 @@ const PlayerCard = ({ player, onAction, buttonText }) => {
             <span title="Assistências">{assists} A</span>
           </div>
           <button 
-            className={`player-button ${getButtonClass()}`}
-            onClick={() => onAction && onAction(player)}
+            className={getButtonClass()}
+            onClick={handleButtonClick}
             disabled={isButtonDisabled}
+            aria-label={localButtonText ? `${localButtonText} para ${player.name}` : `Marcar ${player.name} como presente`}
           >
-            {buttonText || "Chegou"}
+            {localButtonText || "Chegou"}
           </button>
         </div>
       </div>
