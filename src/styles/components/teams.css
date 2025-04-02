@@ -61,6 +61,22 @@
   background-color: #3498db;
 }
 
+.completar-button {
+  background-color: #27ae60;
+}
+
+.completar-button:hover {
+  background-color: #2ecc71;
+}
+
+.toggle-button {
+  background-color: #9b59b6;
+}
+
+.toggle-button:hover {
+  background-color: #8e44ad;
+}
+
 .times-container {
   display: flex;
   flex-wrap: wrap;
@@ -88,6 +104,13 @@
   color: #e50914;
 }
 
+.time-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 /* Time A específico */
 .times-container .time:nth-child(1) .time-titulo {
   color: #3498db;
@@ -112,6 +135,20 @@
   gap: 20px;
   justify-content: center;
   width: 100%;
+}
+
+.nao-sorteados-container {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(20, 20, 20, 0.05);
+  border: 1px dashed #e74c3c;
+}
+
+.nao-sorteados-container h2 {
+  color: #e74c3c;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {

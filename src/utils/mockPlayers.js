@@ -18,7 +18,7 @@ const mockPlayers = [
   {
     id: 3,
     name: "Felipe Martins",
-    position: "Goleiro",
+    position: "Zagueiro",
     statusPagamento: "Adimplente",
     goals: 0,
     assists: 0
@@ -82,7 +82,7 @@ const mockPlayers = [
   {
     id: 11,
     name: "Gabriel Santos",
-    position: "Goleiro",
+    position: "Atacante",
     statusPagamento: "Inadimplente",
     goals: 0,
     assists: 1
@@ -130,7 +130,7 @@ const mockPlayers = [
   {
     id: 17,
     name: "Márcio Oliveira",
-    position: "Goleiro",
+    position: "Atacante",
     statusPagamento: "Inadimplente",
     goals: 0,
     assists: 0
@@ -186,7 +186,7 @@ const mockPlayers = [
   {
     id: 24,
     name: "Thiago Silva",
-    position: "Goleiro",
+    position: "Atacante",
     statusPagamento: "Adimplente",
     goals: 0,
     assists: 0
